@@ -1,0 +1,302 @@
+@import"./mixins";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:  2% ;
+   
+    .img__logo{
+        margin-top: 2%;
+       
+        &-element{
+       
+        }
+    }
+    .navigation{
+        margin-top: 2%;
+        margin-left: 50%;
+      
+        @include tablet{
+            display: none;
+        }
+        @include mobile{
+            display: none;
+        }
+        &__list{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            &-item{
+                
+                &-link{
+                  text-decoration: none;
+                  color: black;
+                  margin: 0 20px;
+                  font-size: 20px;
+                  position: relative;
+                  &:after{
+                    content: "";
+                    position: absolute;
+                    background-color: black;
+                    height: 3px;
+                    width: 0;
+                    left: 0;
+                    bottom: -10px;
+                    transition: 0.3s;
+                   
+                }
+                &:hover:after{
+                    width: 100%;
+                }
+            
+                }
+            }
+        }
+    }
+    .menu__link{
+        &-element{
+            display: none;
+            @include tablet{
+                display: block;
+            }
+            @include mobile{
+                display: block;
+            }
+        }
+    }
+}
+
+#main{
+    .main__content{
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 1%;
+        font-size: 18px;
+        &-link{
+            color: #fff;
+            text-decoration: none;
+           cursor: pointer;
+        }
+    }
+
+    .post{
+        &__content{
+            @include tablet{
+               flex-direction: column-reverse;
+            }
+            @include mobile{
+                flex-direction: column-reverse;
+             }
+            background-color: #441314;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            &-img{ width: 50%;
+               
+                &-element{
+                   width: 100%;
+                }
+            }
+            &-title{
+               line-height: 80px;
+               font-size: 25px;
+                color: #fff;
+                &-btn{
+
+             background-color: #fff;     
+            text-decoration: none;
+            border: none;
+            color:black;
+            padding: 15px 25px;
+            transition: 0.5s;
+            &:hover{
+             opacity: 0.7;
+            }
+                }
+            }
+        }
+    }
+
+    .collection-post{
+        margin-top: 5%;
+        &-content{
+            @include mobile{
+                flex-direction: column;
+            }
+            @include tablet{
+                flex-direction: column;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            &-title{
+                line-height: 60px;
+                font-size: 15px;
+                &-btn{
+                    background-color:black;     
+                    text-decoration: none;
+                    border: none;
+                    color:#fff;
+                    padding: 15px 25px;
+                    transition: 0.5s;
+                    &:hover{
+                     opacity: 0.7;
+                    }
+                }
+            }
+            .collection-post-img{
+                @include mobile{
+                    width: 50%;
+                  }
+                  @include tablet{
+                    width: 50%;
+                  }
+                width: 25%;
+                &-element{
+                  width: 100%;
+                  
+                }
+                &-elements{
+                    height: 60vh;
+                    width: 100%;
+                    @include mobile{
+                        height: 50vh;
+                        
+                    }
+                    @include tablet{
+                        height: 50vh;
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    .main__poster{
+        height: 70vh;
+        background-image: url(../assets/images/bacround.webp);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: 5%;
+        position: relative;
+        &-title{
+          color: #fff;
+          font-size: 50px;
+          text-align: center;
+          display: flex;
+          position: absolute;
+          top: 50%;
+          left: 35%;
+          @include mobile{
+           right: 70%;
+          }
+          @include tablet{
+            right: 70%;
+           }
+        }
+    }
+
+    .top2{
+            @include mobile{
+                flex-wrap: wrap;
+            }
+            @include tablet{
+                flex-wrap: wrap;
+            }
+            display: flex;
+            justify-content: space-between;
+            margin-left: 4.5%;
+            margin-top: 5%;
+            font-size: 20px;
+            .product{
+                @include mobile{
+                    margin-top: 5%;
+                }
+                @include tablet{
+                    margin-top: 5%;
+                }
+                &__content{
+                    &-img{
+                    
+                        width: 90%;
+                        &-element{
+                           width: 100%;
+                        }
+                    }
+                    &-title{
+                        line-height: 50px;
+                        &-btn{
+                    background-color:black;     
+                    text-decoration: none;
+                    border: none;
+                    color:#fff;
+                    padding: 12px 25px;
+                    transition: 0.5s;
+                    &:hover{
+                     opacity: 0.7;
+                    }
+                        }
+                    }
+
+                }
+            }
+        
+    }
+
+
+    .offer-post{
+        height: 80vh;
+        width: 100%;
+        text-align: center;
+        background-image: url(../assets/images/twogirl.webp);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+        line-height: 60px;
+       font-size: 40px;
+       .offer-post-content{
+        padding: 12%;
+         &__form{
+            &-inpt{
+                font-size: 20px;
+                outline: none;
+            }
+            &-btn{
+             
+            }
+         }
+       }
+    }
+
+    #footer{
+        display: flex;
+        justify-content: space-around;
+        @include mobile{
+            flex-direction: column;
+        }
+        @include tablet{
+            flex-direction: column;
+        }
+        .footer__col{
+        
+            li{
+                line-height: 70px;
+                list-style-type: none;
+                a{
+                    color: black;
+                    font-size: 25px;
+                }
+                
+            }
+        }
+    }
+}
